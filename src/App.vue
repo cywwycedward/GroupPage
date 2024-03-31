@@ -1,33 +1,29 @@
 <template>
 <el-container id="app-container">
     <el-header>
-        <!-- <el-tabs v-model="activeName" id="tabs" @tab-click="handleClick">
-            <el-tab-pane label="All" name="first"></el-tab-pane>
-            <el-tab-pane label="M1" name="second"></el-tab-pane>
-            <el-tab-pane label="M2" name="third"></el-tab-pane>
-            <el-tab-pane label="M3" name="fourth"></el-tab-pane>
-            <el-tab-pane label="M4" name="fourth"></el-tab-pane>
-        </el-tabs> -->
-        <RouterLink to="/members">Member</RouterLink>
-        <RouterLink to="/Map">Map</RouterLink>
-        <RouterLink to="/Map">Map</RouterLink>
-        <RouterLink to="/Map">Map</RouterLink>
-        <RouterLink to="/Map">Map</RouterLink>
+        <el-tabs v-model="activeName" id="tabs" @tab-click="handleClick">
+            <el-tab-pane label="All" name="all"></el-tab-pane>
+            <el-tab-pane label="M1" name="1"></el-tab-pane>
+            <el-tab-pane label="M2" name="2"></el-tab-pane>
+            <el-tab-pane label="M3" name="3"></el-tab-pane>
+            <el-tab-pane label="M4" name="4"></el-tab-pane>
+        </el-tabs>
     </el-header>
     <div id="app-container-main">
-        <MemberPage></MemberPage>
-        <!-- <RouterView></RouterView> -->
+        <!-- <MemberPage></MemberPage> -->
+        <RouterView></RouterView>
     </div>
 </el-container>
 </template>
 <script setup>
 import { ref } from 'vue'
+import {useRouter} from 'vue-router'
+const activeName = ref('all')
+const router = useRouter()
 
-// const activeName = ref('second')
-
-// const handleClick = (tab, event) => {
-// console.log(tab, event)
-// }
+const handleClick = (tab, event) => {
+    router.push({name:'member',params:{id:tab.props.name}})
+}
 </script>
 
 <style lang="scss" scoped>

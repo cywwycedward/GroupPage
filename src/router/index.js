@@ -9,6 +9,11 @@ const router = createRouter({
             path: '/members/:id',
             name:'member',
             component:MemberPage
+        },
+        {
+            path: '/',
+            name:'home',
+            redirect:'/members/all'
         }
     ]
 })

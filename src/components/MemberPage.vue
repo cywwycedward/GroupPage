@@ -27,13 +27,5 @@ watch(()=>route.params.id,(to,from)=>{
     align-items: center;
 }
 
-MemberDesc{
-    width: 60%;
-    height: 100%;
-}
 
-Map{
-    width: 30%;
-    height: 30%;
-}
 </style>
